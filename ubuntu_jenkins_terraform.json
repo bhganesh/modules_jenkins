@@ -9,7 +9,7 @@
       "region": "{{user `region`}}",
       "source_ami": "ami-0123b531fc646552f",
       "instance_type": "{{user `instance_type`}}",
-      "security_group_id": "sg-0648ae3c0d41ac32d",
+      "security_group_id": "sg-0897eb879c7442b81",
       "ssh_username": "ubuntu",
       "ami_name": "Packer_UbuntuJenkins {{timestamp}}"
     }],
@@ -24,9 +24,14 @@
                 "sudo apt-get install -y jenkins",
                 "sudo systemctl restart jenkins",
                 "sudo apt-get install -y unzip",
+                "sudo apt-get install -y zip",
                 "sudo wget https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip",
                 "sudo unzip terraform_0.12.18_linux_amd64.zip",
-                "sudo mv terraform /usr/local/bin/"
+                "sudo mv terraform /usr/local/bin/",
+                "sudo apt-get install -y awscli",
+                "sudo wget https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip",
+                "sudo unzip packer_1.5.1_linux_amd64.zip",
+                "sudo mv packer /usr/local/bin"
               ]
       }
     ]
